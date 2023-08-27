@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="box">
+    <button onclick="typ()">Click</button>
+    <script>
+        let x= "Hello"
+        let y = "World"
+        let z = " "
+        let k = "Life is Amazing "
+        // console.log(x.str);
+// Cancatenation
+        console.log(x.concat(z.concat(y)));
+
+        // To uppercase
+        console.log(y.toLocaleUpperCase());
+
+        // Substring
+        console.log(x.substring(1,6));
+        // Replace
+        console.log(k.replace(' ', '-'));
+
+        let date = '12/03/2004'
+        let change = date.split('/')
+        let age = 2023 - change[2]
+        console.log(change[2]);
+        console.log(age);
+
+        // console.log('if you were born in ${change[2]} then your age is ${age}');
+        // Repeat
+
+        console.log(k.repeat(4));
+// Start & End  With
+        console.log(k.startsWith('Life'));
+        console.log(k.endsWith('life'));
+
+        console.log(x.includes('el'));
+
+        function typ() {
+            console.log(box.value-=3)
+            // To change text to integer
+            // alert(parseInt(box.value))
+        }
+        let a =2
+    </script>
+                <!-- <script>setTimeout(function(){window.location='transactions'}, 1000)</script>"; -->
+
+</body>
+</html>

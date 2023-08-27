@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <p id="tag">Hello World</p>
+        <input type="text" id="input">
+        <button>Click Here</button>
+        <div id="display"></div>
+        
+        <!-- <h1> e.target.style.backgroundColor = 'red'</h1> -->
+        <input type="text" id="inpval"><button id="adtag">Click</button>
+        <div id="show"></div>
+        <div id="container" style="height: 400px; overflow: auto;">
+            Commodi pariatur debitis quia fugit aspernatur totam delectus iure assumenda. Aut, voluptates! Ea fugit doloremque corporis quidem nobis soluta, sunt fuga, modi explicabo aperiam, mollitia culpa magni tempore quas neque.
+            Nesciunt consequuntur consequatur illum. Odio dicta repellat consequuntur velit iusto laudantium similique qui omnis sapiente cum autem, commodi itaque, sit adipisci exercitationem, eius expedita eos aliquam quod distinctio eveniet odit?
+            Voluptates, inventore voluptatem nesciunt, labore omnis officiis aliquid quae ipsam quam, repellat odio culpa magni tempora deleniti molestias. Velit, eaque! Dicta sunt temporibus enim incidunt commodi molestiae illum, totam voluptate.
+            Minus amet odit cumque in officia, quidem doloribus velit sit eius eligendi facilis quasi dicta fugiat unde corporis soluta! Recusandae doloribus facere officia commodi minus esse reprehenderit culpa iusto rem!
+            Expedita ipsum, debitis exercitationem ipsa error tenetur explicabo corrupti accusamus totam odio, inventore nulla reprehenderit? Voluptatum fugiat quas quod quasi, delectus vel deserunt rem dignissimos iure enim maiores velit praesentium?
+            Officia corporis repellendus tempora mollitia? Similique cumque voluptas rerum, possimus ullam laboriosam eos autem. Nobis eligendi rerum, reprehenderit porro impedit, doloribus ad, amet velit accusantium harum doloremque. Soluta, iusto corrupti.
+            Architecto eum, labore alias praesentium neque ullam asperiores amet natus debitis porro? Omnis molestiae eius aspernatur aperiam dolorem numquam cumque inventore commodi saepe necessitatibus reprehenderit, ad culpa excepturi. Illum, ut.
+            Velit possimus, corporis dolorum dignissimos molestiae quisquam sunt reiciendis doloremque sint minus alias, praesentium, porro non nobis laudantium? Nesciunt inventore quos, officiis non facilis architecto totam eligendi accusantium itaque vitae?
+            Doloribus tempore iste repellendus illum laudantium dicta, fugiat nam voluptatibus reprehenderit eius rerum necessitatibus saepe unde ut repellat amet doloremque ullam eos ipsam aliquam labore odit. Hic aliquam quod commodi!
+            Aspernatur aliquam exercitationem magnam adipisci deserunt nihil nostrum fugiat cupiditate optio, alias, beatae ratione mollitia maiores, aperiam ipsa ex culpa veritatis dolores ut vitae? Enim vel a asperiores voluptatem molestias?
+        </div>
+        <script>
+            // console.log(tag);
+            tag.addEventListener('copy', function() {
+                alert('Text copied')
+            })
+            let button = document.querySelector('button')
+             button.addEventListener('click', (e)=>{
+                // console.log(e);
+                alert(e.target.innerHTML)
+                e.target.style.backgroundColor = 'red'
+                e.target.classList = 'btn'
+                e.target.classList.add('success')
+             })
+             let no = [1,2,3,4,5,6,7,8,9]
+             for(let i =0; i< no.length; i++){
+                display.innerHTML += `<button>${no[i]}</button>`
+             }
+
+             display.addEventListener('click', function (e) {
+                if (e.target.nodeName === 'BUTTON') {
+                //    console.log(e.target.innerHTML); 
+                input.value += e.target.innerHTML; 
+
+                }
+             })
+
+             let body = document.querySelector('#container')
+             body.addEventListener('scroll', function (e) {
+                // console.log();
+                e.target.style.backgroundColor = 'red'
+             })
+
+
+             adtag.addEventListener('click', function () {
+                let newElement = document.createElement('h1')
+                newElement.textContent = inpval.value
+
+                show.appendChild(newElement);
+                
+           
+             })
+
+             let delt = document.querySelector('h1')
+             if (delt !== null) {
+                delt.addEventListener('click', function (e) {
+               console.log(e);
+               e.target.style.display = 'none'
+
+             })
+             }
+              
+        </script>
+</body>
+</html>

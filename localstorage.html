@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        let x = "Number"
+        let name = "Akeem"
+        localStorage.setItem('Username', name)
+
+        let users = {
+            name: 'Slim', email: 'selim@gmail.com'
+        }
+        localStorage.setItem('users', JSON.stringify(users))
+        
+        let obj = [{name: 'Hameed', age: '12years'},{name: 'Malik', age: '22years'}]
+        localStorage.setItem('obj', JSON.stringify(obj))
+        // Retrieve Data
+        let key = localStorage.getItem('Username')
+        console.log(key);
+        let row = JSON.parse(localStorage.getItem('users'))
+        console.log(users);
+
+        let rw = JSON.parse(localStorage.getItem('obj'))
+        console.log(rw);
+     </script>
+</body>
+</html>
