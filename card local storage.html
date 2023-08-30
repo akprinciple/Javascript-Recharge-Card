@@ -99,36 +99,28 @@
         
             function display() {
                 tbody.innerHTML = ''
-                let tr, del;
+               
             cards.length > 0?
                 cards.forEach((key, i)=> {
-                    const tr = document.createElement('tr');
-                    
-                    tr.innerHTML = `
-                    
+                    // tbody.innerHTML = ''
+                    tbody.innerHTML += `
+                    <tr>
                         <td>${i+1}</td>
                         <td>${key.network}</td>
                         <td>${key.amount}</td>
                         <td>${key.pin}</td>
                         <td>${key.recharge}</td>
                         <td>${key.status? 'Used': 'Unused'}</td>
-                        <td><i title='Delete' class='fas fa-trash-alt text-danger trash'></i></td>
-                        
+                        <td><i title='Delete' class='fas fa-trash-alt text-danger trash' onclick='del(${i})'></i></td>
+                        </tr>
                         `
                         // let tr = document.querySelector('tr')
-                        let del = tr.querySelector('.trash')
-                        del.addEventListener('click', ()=>{
-                    const object = cards.findIndex(c => c.id === key.id);
-                    cards.splice(object, 1);
-                    localStorage.removeItem('card', JSON.stringify(cards))
-                    display()
-                    
-    
-                })
-                // console.log(tr);
-                tbody.appendChild(tr);
+                       
+                    // localStorage.setItem('card', JSON.stringify(cards))
+                   
                     }) : null
                 }
+                
                 display()
                 rechargeClick.addEventListener('click', ()=> {
                     let Recharge = RechargePin.value.trim()
@@ -155,30 +147,21 @@
                         alert('card not found')
                     }
                 })
-                cards.forEach((key,i)=>{
-                    const tr = document.createElement('tr');
-                    tr.innerHTML += `
-                    <tr>
-                        <td>${i+1}</td>
-                        <td>${key.network}</td>
-                        <td>${key.amount}</td>
-                        <td>${key.pin}</td>
-                        <td>${key.recharge}</td>
-                        <td>${key.status? 'Used': 'Unused'}</td>
-                        <td><i title='Delete' class='fas fa-trash-alt text-danger trash'></i></td>
-                        </tr>
-                        `
-                let del = tr.querySelector('.trash')
-                del.addEventListener('click', ()=>{
-                    const object = cards.findIndex(card => card.id === key.id);
-    
-                    console.log(object);
-                    // cards.splice(objectIndexToDelete, 1);
-                    // localStorage.removeItem('card', JSON.stringify(cards))
-                    // display()
-                })
-            })
-        
+        // let del = tr.querySelector('.trash')
+        //         del.addEventListener('click', ()=>{
+        //             const object = cards.findIndex(card => card.id !== key.id);
+        //             cards = object
+        //             console.log(object);
+        //             // cards.splice(objectIndexToDelete, 1);
+        //             // localStorage.removeItem('card', JSON.stringify(cards))
+        //             // display()
+        //         })
+        function del(i) {
+            cards.splice(i,1)
+            localStorage.setItem('card', JSON.stringify(cards))
+            
+            display()
+        }
     </script>
 </body>
 </html>

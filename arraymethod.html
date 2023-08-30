@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"></div>
+    <table id="table" width="100%" border="1">
+
+    </table>
+    <script>
+        let number = [9, 45, 67, 12] 
+
+        number.forEach((key, i)=>{
+            display.innerHTML += `<p>${key < 10? key: key+10}</p>`
+        })
+
+        let product = [
+            {name: 'rice', price: '50'},
+            {name: 'beans', price: '70'},
+            {name: 'Fufu', price: '10'},
+            {name: 'Garri', price: '5'},
+        ]
+        function display() {
+            table.innerHTML = ''
+        
+        product.forEach((elem, i)=>{
+
+            table.innerHTML += `<tr onclick="delt(${i})">
+                    <td>${elem.name}</td>
+                    <td>${elem.price}</td>
+                </tr>`
+                
+        })
+    }
+    display()
+        function delt(i) {
+                //    let filtered = product.filter((elem, index)=> index != i)
+                //    product = filtered
+
+                
+                product.splice(i, 1)
+                display()
+                }
+    </script>
+</body>
+</html>
