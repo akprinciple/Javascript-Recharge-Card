@@ -157,7 +157,10 @@ function timer() {
     let d = new Date();
     let t = d.toLocaleTimeString();
     let date = d.getDate() + ':'+ d.getMonth() +':'+ d.getFullYear()
-    display ? display.innerHTML = date + '<br>' + t: '';
+    if (display) {
+        display.innerHTML = date + '<br>' + t 
+    }
+    
    
 }
 button.addEventListener('click', ()=>{
